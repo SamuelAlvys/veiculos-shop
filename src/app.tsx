@@ -1,12 +1,16 @@
-import { Button } from "./components/ui/button";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Header } from './components/layout/header';
 
 export function App() {
 
   return (
-    <div className="w-screen flex justify-center items-center items-cente">
-      <Button>
-        Hello, world!!!
-      </Button>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Header />}>
+          <Route path="/"/>
+          <Route path="/dashboard"/>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
