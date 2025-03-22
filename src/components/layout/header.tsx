@@ -2,13 +2,14 @@ import { Outlet } from "react-router-dom";
 import { Button } from "../ui/button";
 import { PiMagnifyingGlass, PiWhatsappLogo } from "react-icons/pi";
 import { Input } from "../ui/input";
-import { Label } from "../ui/label";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
+import { CarouselBrands } from "../carroselcard";
+import { Cardstock } from "../cardstock";
 
 export function Header() {
     return (
         <div className="bg-slate-900 pt-4">
-            <div className="h-[700px] rounded-2xl mx-4 bg-[url('background-img.jpg')] bg-cover bg-no-repeat">
+            <div className="h-[700px] rounded-2xl mx-4 bg-[url('/background-img.jpg')] bg-cover bg-no-repeat">
                 <div className="py-5 px-15 text-white flex flex-row justify-between">
                     <div>
                         <a href="#">
@@ -73,8 +74,30 @@ export function Header() {
                     </div>
                 </div>
             </div>
-            <div>
-                <h1>marcas</h1>
+            {/*Carrossel com cards das marcas*/}
+            <div className="mt-20 flex flex-row justify-center">
+                <CarouselBrands />
+            </div>
+            {/*Lista com últimos carros adicionados ao sistema*/}
+            <div className="py-5 px-15 mt-15">
+                <h2 className="text-white text-xl">
+                    Últimas novidades 
+                </h2>
+                <div className="grid grid-cols-3 gap-3">
+                    <Cardstock>
+                        <img src="/background-img.jpg" alt="" />
+                    </Cardstock>
+                    <Cardstock>
+                        <img src="/background-img.jpg" alt="" />
+                    </Cardstock>
+                    <Cardstock>
+                        <img src="/background-img.jpg" alt="" />
+                    </Cardstock>
+                    
+                </div>
+            </div>
+            <div className="mt-40">
+                .
             </div>
 
             <Outlet />
