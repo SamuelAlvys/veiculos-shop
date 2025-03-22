@@ -5,8 +5,22 @@ import { Input } from "../ui/input";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { CarouselBrands } from "../carroselcard";
 import { Cardstock } from "../cardstock";
+import { useEffect, useState } from "react";
+import { api } from "@/lib/api";
 
 export function Header() {
+    const [state, setState] = useState<any>()
+
+    useEffect(() => {
+        api.get('/vehicles')
+            .then(response => {
+                setState(response.data)
+            })
+    }, [])
+
+    console.log(state)
+
+
     return (
         <div className="bg-slate-900 pt-4">
             <div className="h-[700px] rounded-2xl mx-4 bg-[url('/background-img.jpg')] bg-cover bg-no-repeat">
@@ -44,7 +58,7 @@ export function Header() {
                     </nav>
                     <div>
                         <Button className="text-black">
-                            <PiWhatsappLogo size={30}/>
+                            <PiWhatsappLogo size={30} />
                             Contato
                         </Button>
                     </div>
@@ -61,7 +75,7 @@ export function Header() {
                                         <PopoverTrigger className="py-2 px-4 rounded-2xl">Qual veículo você está buscando?</PopoverTrigger>
                                         <PopoverContent>
                                             <div className="flex flex-row gap-2">
-                                                <Input type="text" placeholder="Marca ou modelo" className="text-black"/>
+                                                <Input type="text" placeholder="Marca ou modelo" className="text-black" />
                                                 <Button type="submit">
                                                     <PiMagnifyingGlass size={32} color="black" />
                                                 </Button>
@@ -81,7 +95,7 @@ export function Header() {
             {/*Lista com últimos carros adicionados ao sistema*/}
             <div className="py-5 px-15 mt-15">
                 <h2 className="text-white text-xl">
-                    Últimas novidades 
+                    Últimas novidades
                 </h2>
                 <div className="grid grid-cols-3 gap-3">
                     <Cardstock>
@@ -93,7 +107,7 @@ export function Header() {
                     <Cardstock>
                         <img src="/background-img.jpg" alt="" />
                     </Cardstock>
-                    
+
                 </div>
             </div>
             <div className="mt-40">
