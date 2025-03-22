@@ -7,6 +7,7 @@ import { CarouselBrands } from "../carroselcard";
 import { Cardstock } from "../cardstock";
 import { useEffect, useState } from "react";
 import { api } from "@/lib/api";
+import { Card, CardContent } from "../ui/card";
 
 export function Header() {
     const [state, setState] = useState<any>()
@@ -109,6 +110,25 @@ export function Header() {
                     </Cardstock>
 
                 </div>
+            </div>
+            <div className="w-full flex justify-center p-4">
+                <Card>
+                    <CardContent>
+                        <ul>
+                        {state?.data.length > 0 ? (
+                        <ul>
+                            {state.data.map((vehicle: any) => (
+                                <li key={vehicle.id}>
+                                    <h2>{vehicle.model} - {vehicle.year}</h2>
+                                </li>
+                            ))}
+                        </ul>
+                    ) : (
+                        <p>Carregando veículos...</p>
+                    )}
+                        </ul>
+                    </CardContent>
+                </Card>
             </div>
             <div className="mt-40">
                 .
