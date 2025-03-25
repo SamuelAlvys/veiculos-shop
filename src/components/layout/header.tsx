@@ -24,28 +24,28 @@ export function Header() {
                             </a>
                         </li>
                         <li>
-                            <a href="/home">
+                            <a href="/stock">
                                 <h2>
                                     Estoque
                                 </h2>
                             </a>
                         </li>
                         <li>
-                            <a href="/home">
+                            <a href="/sel">
                                 <h2>
                                     Venda seu carro
                                 </h2>
                             </a>
                         </li>
                         <li>
-                            <a href="/home">
+                            <a href="/finance">
                                 <h2>
                                     Financie
                                 </h2>
                             </a>
                         </li>
                         <li>
-                            <a href="/home">
+                            <a href="/about">
                                 <h2>
                                     Sobre nós
                                 </h2>

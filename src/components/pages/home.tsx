@@ -27,13 +27,13 @@ export function Home() {
                 <div className="mt-7 grid grid-cols-3 gap-6 justify-center">
                 {[...Array(3)].map((_, index) => (
                     <CardShop
-                    key={index}
-                    carImg="/car.jpg"
-                    title="Garantia do ano"
-                    model="Toyota YARIS 1.5 I6V FLEX XL PLUS CONNECT MULTIDRIVE"
-                    year="2020/2021"
-                    mileage="81.257"
-                    price="R$ 80.990"
+                        key={index}
+                        carImg="/car.jpg"
+                        title="Garantia do ano"
+                        model="Toyota YARIS 1.5 I6V FLEX XL PLUS CONNECT MULTIDRIVE"
+                        year="2020/2021"
+                        mileage="81.257"
+                        price="R$ 80.990"
                     />
                 ))}
                 </div>
